@@ -1,0 +1,88 @@
+<!-- Página creada por Nelson Dominguez Martinez - 2025 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Future Project</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Konkhmer+Sleokchher&display=swap" rel="stylesheet">
+</head>
+<body class="future-project">
+    <header>
+        <div class="logo">
+          <img src="images/brain-logo.png" class="brain-logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html#information">Information</a></li>
+            <li><a href="home.html#about">About us</a></li>
+            <li><a href="future-project.html">Future Project</a></li>
+            <li><a href="home.html#tools">Tools</a></li>
+          </ul>
+        </nav>
+        
+      </header>
+      <div class="container">
+        <div class="slide animation-slide" id="first-slide">
+          <img src="images/futureP-hand.png" alt="Imagen 1" class="slide-image1">
+          <p class="slide-text1">YOUR BODY.</p>
+          <p class="slide-text2">YOUR FUTURE.</p>
+          <button id="nextBtn">NEXT</button>
+          <div class="slide-text3 fade-in">
+            Let AI guide you to the best
+          </div>
+          <div class="slide-text4 fade-in">
+            version of yourself.
+          </div>
+        </div>
+      </div>
+    
+      
+      <script>
+        const nextBtn = document.getElementById('nextBtn');
+        const text1 = document.querySelector('.slide-text1');
+        const text2 = document.querySelector('.slide-text2');
+        const text3 = document.querySelector('.slide-text3');
+        const text4 = document.querySelector('.slide-text4');
+        const image = document.querySelector('.slide-image1');
+      
+        nextBtn.addEventListener('click', () => {
+          text1.classList.add('exit-text1');
+          text2.classList.add('exit-text2');
+      
+          text3.classList.remove('fade-in');
+          text4.classList.remove('fade-in');
+          image.classList.remove('fade-in');
+      
+          text3.classList.add('fade-out');
+          text4.classList.add('fade-out');
+          image.classList.add('fade-out-slow');
+      
+          nextBtn.classList.add('fade-out12');
+      
+
+
+
+
+          setTimeout(() => {
+            const newContent = document.createElement('div');
+            newContent.classList.add('new-content');
+            newContent.innerHTML = 
+            `<h2 class="FutureProject11">Future Project</h2>
+            <p class="FitnessText">A Fitness App with AI</p>
+            <img src="images/selfie-person.png" alt="Person" class="selfie">`;
+            
+            document.body.appendChild(newContent);
+          }, 2000);
+
+        });
+      </script>
+      
+</body>
+</html>
+
+<!-- Página creada por Nelson Dominguez Martinez - 2025 -->

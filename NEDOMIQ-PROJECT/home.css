@@ -1,0 +1,773 @@
+/* Página creada por Nelson Dominguez Martinez - 2025 */
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+header {
+  background-color: #CECECE;
+  border-radius: 0 0 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 100;
+  height: 70px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 75px;
+  margin-right: 650px;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #0077cc;
+}
+
+nav ul li a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.hero-section {
+  position: relative;
+  height: 875px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.background {
+  background-image: url("images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 875px;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.brain-logo {
+  width: 185px;
+  height: 185px;
+  margin-top: 7px;
+  margin-left: 20px;
+}
+
+.hero-section .content {
+  position: absolute;
+  top: 80px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-section .content h1 {
+  font-family: 'Konkhmer Sleokchher', sans-serif;
+  font-size: 125px;
+  margin: 0;
+  letter-spacing: 2px;
+  color: white;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-section .content h1 .bold {
+  color: black;
+}
+
+.hero-section .content h2 {
+  font-family: 'Konkhmer Sleokchher', sans-serif;
+  font-size: 26px;
+  margin-top: -75px;
+  margin-bottom: 8px;
+  color: #000;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.3s;
+  position: relative;
+}
+
+.hero-section .content h2::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  animation: underlineExpand 0.6s ease-out forwards;
+  animation-delay: 1.6s;
+  animation-fill-mode: forwards;
+}
+
+.hero-section .content hr {
+  display: none !important;
+}
+
+.hero-section button {
+  font-family: 'Koulen', sans-serif;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 40px;
+  font-size: 30px;
+  box-shadow: 0 10px 20px rgba(224, 219, 219, 0.959);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 4s ease-out forwards;
+  animation-delay: 2.3s;
+  margin-top: 75px;
+}
+
+.hero-section button:hover {
+  transform: scale(1.1);
+  background-color: #222;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes underlineExpand {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 235px;
+    opacity: 1;
+  }
+}
+
+.decor {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.image-container,
+.image-container2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.imagen-animada {
+  position: absolute;
+  bottom: -200px;
+  left: 90%;
+  width: 650px;
+  height: auto;
+  opacity: 0;
+  animation: subirImagen 2s ease-out forwards;
+  animation-delay: 0.5s;
+  z-index: 2;
+}
+
+.imagen-animada2 {
+  position: absolute;
+  bottom: -200px;
+  left: 0%;
+  width: 600px;
+  height: auto;
+  opacity: 0;
+  animation: subirImagen2 2s ease-out forwards;
+  animation-delay: 1s;
+  z-index: 1;
+}
+
+
+.strawberry {
+  position: absolute;
+  bottom: 230px;
+  left: 60px;
+  opacity: 0;
+  width: 80px;
+  height: auto;
+  animation: moverYRotar1 3s 1 forwards; 
+}
+
+.strawberry2 {
+  position: absolute;
+  bottom: 230px;
+  left: 60px;
+  opacity: 0;
+  width: 80px;
+  height: auto;
+  animation: moverYRotar2 3s 1 forwards;
+}
+
+.strawberry3 {
+  position: absolute;
+  bottom: 230px;
+  left: 60px;
+  opacity: 0;
+  width: 80px;
+  height: auto;
+  animation: moverYRotar3 3s 1 forwards;
+}
+
+.strawberry {
+  position: absolute;
+  bottom: 500px; 
+  left: 230px;
+  z-index: 2; 
+  width: 80px;
+  animation-delay: 2s;
+}
+
+.strawberry2 {
+  position: absolute;
+  bottom: 580px; 
+  left: 372px;
+  z-index: 2; 
+  width: 100px;
+  transform: rotate(63deg);
+  animation-delay: 3s;
+}
+
+.strawberry3 {
+  position: absolute;
+  bottom: 510px;
+  left: 540px;
+  z-index: 2;
+  width: 127px;
+  transform: rotate(123deg);
+  animation-delay: 4s;
+}
+
+.smoothie {
+  position: absolute;
+  bottom: 230px;
+  left: 60px;
+  z-index: 2;
+  width: 525px; 
+}
+
+@keyframes subirImagen {
+  0% {
+    bottom: -200px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 70px; 
+    left: 1269px;
+    opacity: 1;
+  }
+}
+
+@keyframes subirImagen2 {
+  0% {
+    bottom: -200px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 69px;
+    opacity: 1;
+  }
+}
+
+.smoothie {
+  opacity: 0; 
+  animation: aparecer 2s ease-in forwards; 
+  animation-delay: 2s;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1; 
+  }
+}
+
+
+@keyframes moverYRotar1 {
+  0% {
+    transform: translate(125px, 80px) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-20px, 23px) rotate(350deg); 
+    opacity: 1; 
+  }
+}
+
+@keyframes moverYRotar2 {
+  0% {
+    transform: translate(-10px, 140px) rotate(0deg); 
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-10px, 5px) rotate(60deg); 
+    opacity: 1; 
+  }
+}
+
+@keyframes moverYRotar3 {
+  0% {
+    transform: translate(-180px, 90px) rotate(0deg); 
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-15px, 40px) rotate(120deg); 
+    opacity: 1;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.white-section {
+  background-color: white;
+  color: #000;
+  padding: 100px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.white-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.white-section p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.large-text {
+  font-size: 50px; 
+  font-weight: bold; 
+  text-align: center
+}
+
+.contact-section {
+  background-color: #CECECE;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1px;
+  background-color: rgba(0, 0, 0, 0.493); 
+  border-radius: 15px;
+}
+
+.contact-container h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.contact-container p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.contact-container ul {
+  list-style: none; 
+  padding: 0;
+}
+
+.contact-container li {
+  margin-bottom: 34px;
+}
+
+.contact-container a {
+  color: #1E90FF;
+  text-decoration: none; 
+}
+
+.contact-container a:hover {
+  text-decoration: underline;
+}
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brain-logo2 {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+.contact-section {
+  position: relative; 
+}
+
+.brain-logo2 {
+  width: 200px; 
+  height: auto;
+  position: absolute; 
+  left: 1.5%;
+  top: 50%;
+  transform: translateY(-50%); 
+  border-radius: 8px; 
+}
+
+body.future-project {
+  background-image: url('images/futureP-background.png');
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  height: 875px;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  backdrop-filter: blur(1px);
+}
+
+.slide-image1 {
+  width: 596px;
+  float: right;
+  margin-top: -1%;
+  position: relative;
+  left: 100%; 
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    left: 100%; 
+  }
+  100% {
+    left: 0; 
+  }
+}
+
+@keyframes fadeOutSlow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out-slow {
+  animation: fadeOutSlow 3s ease-out forwards;
+}
+
+
+.slide-text1 {
+  font-family: 'Konkhmer Sleokchher', sans-serif;
+  font-size: 125px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 2px;
+  color: white;
+  opacity: 0;
+  transform: translateY(60px);
+  position: absolute;
+  right: -100%;
+  top: 22%;
+  white-space: nowrap;
+  text-shadow: 
+    0 0 5px #888888,
+    0 0 10px #6d6d6d,
+    0 0 15px #464546,
+    0 0 20px #303030,
+    0 0 30px #000000;
+  
+  animation: slideInFromRightText 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+
+.slide-text2 {
+  font-family: 'Konkhmer Sleokchher', sans-serif;
+  font-size: 125px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 2px;
+  color: white;
+  opacity: 0;
+  transform: translateY(60px);
+  position: absolute;
+  left: -100%;
+  top: 35%;
+  white-space: nowrap;
+  text-shadow: 
+    0 0 5px #888888,
+    0 0 10px #6d6d6d,
+    0 0 15px #464546,
+    0 0 20px #303030,
+    0 0 30px #000000;
+
+  animation: slideInFromLeftText 2s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+
+@keyframes slideInFromRightText {
+  0% {
+    right: -100%;
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    right: 40%;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeftText {
+  0% {
+    left: -100%;
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    left: 17.5%;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes slideOutToLeftTextWithFade {
+  0% {
+    right: 40%;
+    opacity: 1;
+    transform: translateY(0); 
+  }
+  100% {
+    right: 110%;
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutToRightTextWithFade {
+  0% {
+    left: 18.4%;
+    opacity: 1;
+    transform: translateY(0); 
+  }
+  100% {
+    left: 110%;
+    opacity: 0;
+    transform: translateY(0); 
+  }
+}
+
+
+@keyframes hideInstantly {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.exit-text1 {
+  animation: 
+    slideOutToLeftTextWithFade 2s ease-in forwards,
+    hideInstantly 0s forwards;
+  animation-delay: 0s, 2s;
+}
+
+.exit-text2 {
+  animation: 
+    slideOutToRightTextWithFade 2s ease-in forwards,
+    hideInstantly 0s forwards;
+  animation-delay: 0s, 2s;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.fade-in {
+  animation: fadeIn 2s ease-in 3.7s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 2s ease-out forwards;
+}
+
+.slide-text3, .slide-text4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 27px;
+  margin: 0;
+  color: white;
+  z-index: 2;
+  position: absolute;
+  left: 365px;
+  opacity: 0;
+}
+
+.slide-text3 {
+  margin-top: 415px;
+}
+
+.slide-text4 {
+  margin-top: 442px;
+}
+
+#nextBtn {
+  font-family: 'Koulen', sans-serif;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 2px 24px;
+  border-radius: 40px;
+  font-size: 40px;
+  box-shadow: 0 10px 20px rgba(224, 219, 219, 0.959);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 4s ease-out forwards;
+  animation-delay: 5s;
+  margin-top: 600px;
+  position: absolute;
+  left: 355px;
+}
+
+#nextBtn:hover {
+  transform: scale(1.1);
+  background-color: #222;
+}
+
+
+.fade-out12 {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 3s ease-out;
+  transition-delay: 2s;
+}
+
+.FutureProject11 {
+  font-family: 'Koulen', sans-serif;
+  font-size: 550%;
+  color: #ffffff;
+  letter-spacing: 4px;
+  z-index: 2;
+  margin-left: 35%;
+  white-space: nowrap;
+  text-shadow: 
+  0 0 5px #707070,
+  0 0 10px #5f5f5f,
+  0 0 15px #3d3d3d,
+  0 0 20px #303030,
+  0 0 30px #000000;
+
+}
+
+.FitnessText {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 300%;
+  color: #ffffff;
+  margin-left: 38%;
+  margin-top: -2.5%;
+  text-shadow: 
+  0 0 5px #fffeb7,
+  0 0 10px #fcf268,
+  0 0 15px #ffd96f,
+  0 0 20px #ffd650,
+  0 0 30px #ffe91f;
+
+}
+
+.selfie {
+  z-index: 2;
+  width: 473px; 
+  height: auto; 
+  margin-left: 36%;
+}
+
+/* Página creada por Nelson Dominguez Martinez - 2025 */
